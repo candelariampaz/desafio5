@@ -111,3 +111,22 @@ btnEnviar.addEventListener('submit', (e) => {
  }
  )
 
+
+
+// const{ value: accept } = await
+Swal.fire({
+  title: 'Queres subscribirte a nuestro newsletter?',
+  input: 'checkbox',
+  inputValue: 1,
+  inputPlaceholder:
+    'Quiero recibir novedades',
+  confirmButtonText:
+    'Continue <i class="fa fa-arrow-right"></i>',
+  inputValidator: (result) => {
+    return !result && 'You need to agree with T&C'
+  }
+})
+
+if (accept) {
+  Swal.fire('Bienvenido a CG Design :)')
+}
